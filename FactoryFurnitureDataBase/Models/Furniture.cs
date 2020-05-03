@@ -18,6 +18,6 @@ namespace FactoryFurnitureDataBase.Models
         [ForeignKey("FurnitureId")]
         public List<Order> Order { get; set; }
         [ForeignKey("FurnitureId")]
-        public List<Material> Material { get; set; }
+        public List<FurnitureMaterial> FurnitureMaterial { get; set; }
     }
 }

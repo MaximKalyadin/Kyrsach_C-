@@ -10,8 +10,6 @@ namespace FactoryFurnitureBusinessLogic.ViewModel
         public int? Id { get; set; }
         [DisplayName("Наименование материала")]
         public string MaterialName { get; set; }
-        [DisplayName("Цена")]
-        public int Price { get; set; }
         [DisplayName("Количество")]
         public int Count { get; set; }
     }

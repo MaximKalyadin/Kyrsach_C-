@@ -12,11 +12,9 @@ namespace FactoryFurnitureDataBase.Models
         [Required]
         public string MaterialName { get; set; }
         [Required]
-        public int Price { get; set; }
-        [Required]
         public int Count { get; set; }
         [ForeignKey("MaterialId")]
-        public List<Furniture> Furniture { get; set; }
+        public List<FurnitureMaterial> FurnitureMaterial { get; set; }
         [ForeignKey("MaterialId")]
         public List<Request> Request { get; set; }
     }

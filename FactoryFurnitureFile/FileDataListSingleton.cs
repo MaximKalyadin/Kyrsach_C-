@@ -17,12 +17,14 @@ namespace FactoryFurnitureFile
         private readonly string MaterialFileName = "Material.xml";
         private readonly string FurnitureFileName = "Furniture.xml";
         private readonly string RequestFileName = "Request.xml";
+        private readonly string FurnitureMaterialFileName = "FurnitureMaterial.xml";
 
         public List<Client> Clients { get; set; }
         public List<Order> Orders { get; set; }
         public List<Material> Materials { get; set; }
         public List<Furniture> Furnitures { get; set; }
         public List<Request> Requests { get; set; }
+        public List<FurnitureMaterial> FurnitureMaterials { get; set; }
 
         private FileDataListSingleton()
         {
@@ -31,6 +33,7 @@ namespace FactoryFurnitureFile
             Materials = LoadMaterials();
             Furnitures = LoadFurnitures();
             Requests = LoadRequests();
+            FurnitureMaterials = LoadFurnitureMaterials();
         }
         public static FileDataListSingleton GetInstance()
         {
@@ -47,6 +50,7 @@ namespace FactoryFurnitureFile
             SaveMaterials();
             SaveFurnitures();
             SaveRequests();
+            SaveFurnitureMaterials();
         }
 
         private List<Client> LoadClients()
@@ -104,7 +108,6 @@ namespace FactoryFurnitureFile
                     {
                         Id = Convert.ToInt32(elem.Attribute("Id").Value),
                         MaterialName = elem.Element("MaterialName").Value,
-                        Price = Convert.ToInt32(elem.Element("Price").Value),
                         Count = Convert.ToInt32(elem.Element("Count").Value)
                     });
                 }
@@ -125,8 +128,7 @@ namespace FactoryFurnitureFile
                     {
                         Id = Convert.ToInt32(elem.Attribute("Id").Value),
                         FurnitureName = elem.Element("FurnitureName").Value,
-                        Price = Convert.ToInt32(elem.Element("Price").Value),
-                        Count = Convert.ToInt32(elem.Element("Count").Value)
+                        Price = Convert.ToInt32(elem.Element("Price").Value)
                     });
                 }
             }
@@ -146,6 +148,27 @@ namespace FactoryFurnitureFile
                     {
                         Id = Convert.ToInt32(elem.Attribute("Id").Value),
                         DataCreate = Convert.ToDateTime(elem.Element("DataCreate").Value),
+                        Count = Convert.ToInt32(elem.Element("Count").Value)
+                    });
+                }
+            }
+            return list;
+        }
+
+        private List<FurnitureMaterial> LoadFurnitureMaterials()
+        {
+            var list = new List<FurnitureMaterial>();
+            if (File.Exists(FurnitureMaterialFileName))
+            {
+                XDocument xDocument = XDocument.Load(FurnitureMaterialFileName);
+                var xElements = xDocument.Root.Elements("FurnitureMaterial").ToList();
+                foreach (var elem in xElements)
+                {
+                    list.Add(new FurnitureMaterial
+                    {
+                        Id = Convert.ToInt32(elem.Attribute("Id").Value),
+                        FurnitureId = Convert.ToInt32(elem.Element("FurnitureId").Value),
+                        MaterialId = Convert.ToInt32(elem.Element("MaterialId").Value),
                         Count = Convert.ToInt32(elem.Element("Count").Value)
                     });
                 }
@@ -183,8 +206,7 @@ namespace FactoryFurnitureFile
                     xElement.Add(new XElement("Furniture",
                         new XAttribute("Id", furniture.Id),
                         new XAttribute("FurnitureName", furniture.FurnitureName),
-                        new XAttribute("Price", furniture.Price),
-                        new XAttribute("Count", furniture.Count)
+                        new XAttribute("Price", furniture.Price)
                     ));
                 }
                 XDocument xDocument = new XDocument(xElement);
@@ -202,7 +224,6 @@ namespace FactoryFurnitureFile
                     xElement.Add(new XElement("Material",
                         new XAttribute("Id", material.Id),
                         new XAttribute("MaterialName", material.MaterialName),
-                        new XAttribute("Price", material.Price),
                         new XAttribute("Count", material.Count)
                     ));
                 }
@@ -245,6 +266,25 @@ namespace FactoryFurnitureFile
                 }
                 XDocument xDocument = new XDocument(xElement);
                 xDocument.Save(RequestFileName);
+            }
+        }
+
+        private void SaveFurnitureMaterials()
+        {
+            if (FurnitureMaterials != null)
+            {
+                var xElement = new XElement("FurnitureMaterials");
+                foreach (var elem in FurnitureMaterials)
+                {
+                    xElement.Add(new XElement("Request",
+                        new XAttribute("Id", elem.Id),
+                        new XAttribute("FurnitureId", elem.FurnitureId),
+                        new XAttribute("MaterialId", elem.MaterialId),
+                        new XAttribute("Count", elem.Count)
+                    ));
+                }
+                XDocument xDocument = new XDocument(xElement);
+                xDocument.Save(FurnitureMaterialFileName);
             }
         }
     }
