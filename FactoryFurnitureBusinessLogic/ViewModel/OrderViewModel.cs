@@ -13,5 +13,9 @@ namespace FactoryFurnitureBusinessLogic.ViewModel
         [DisplayName("Дата выполнения")]
         public DateTime? DataImplement { get; set; }
         public int ClientId { get; set; }
+        public int FurnitureId { get; set; }
+        public string ClientFIO { get; set; }
+        public int Price { get; set; }
+        public string FurnitureName { get; set; }
     }
 }

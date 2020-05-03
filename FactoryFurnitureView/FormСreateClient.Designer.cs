@@ -34,6 +34,7 @@
             this.textBoxFIO = new System.Windows.Forms.TextBox();
             this.textBoxAdress = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelName
@@ -85,11 +86,21 @@
             this.textBoxPhone.Size = new System.Drawing.Size(275, 22);
             this.textBoxPhone.TabIndex = 5;
             // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(238, 99);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(116, 38);
+            this.buttonSave.TabIndex = 6;
+            this.buttonSave.Text = "Сохранить";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            // 
             // FormСreateClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 118);
+            this.ClientSize = new System.Drawing.Size(383, 146);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.textBoxAdress);
             this.Controls.Add(this.textBoxFIO);
@@ -111,5 +122,6 @@
         private System.Windows.Forms.TextBox textBoxFIO;
         private System.Windows.Forms.TextBox textBoxAdress;
         private System.Windows.Forms.TextBox textBoxPhone;
+        private System.Windows.Forms.Button buttonSave;
     }
 }

@@ -32,6 +32,8 @@
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxCount = new System.Windows.Forms.TextBox();
             this.comboBoxName = new System.Windows.Forms.ComboBox();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -67,11 +69,31 @@
             this.comboBoxName.Size = new System.Drawing.Size(291, 24);
             this.comboBoxName.TabIndex = 4;
             // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(280, 85);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(144, 43);
+            this.buttonCancel.TabIndex = 5;
+            this.buttonCancel.Text = "Отмена";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(130, 85);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(144, 43);
+            this.buttonSave.TabIndex = 6;
+            this.buttonSave.Text = "Сохранить";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            // 
             // FormAddMaterialToFurniture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 105);
+            this.ClientSize = new System.Drawing.Size(449, 135);
+            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.comboBoxName);
             this.Controls.Add(this.textBoxCount);
             this.Controls.Add(this.labelName);
@@ -89,5 +111,7 @@
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox textBoxCount;
         private System.Windows.Forms.ComboBox comboBoxName;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonSave;
     }
 }
