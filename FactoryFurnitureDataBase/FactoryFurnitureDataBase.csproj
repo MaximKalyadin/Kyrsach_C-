@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Implements\" />
+    <ProjectReference Include="..\FactoryFurnitureBusinessLogic\FactoryFurnitureBusinessLogic.csproj" />
   </ItemGroup>
 
 </Project>

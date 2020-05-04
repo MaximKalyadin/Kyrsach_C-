@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using FactoryFurnitureBusinessLogic.Enum;
 
 namespace FactoryFurnitureBusinessLogic.ViewModel
 {
@@ -15,7 +16,9 @@ namespace FactoryFurnitureBusinessLogic.ViewModel
         public int ClientId { get; set; }
         public int FurnitureId { get; set; }
         public string ClientFIO { get; set; }
-        public int Price { get; set; }
+        public decimal Price { get; set; }
         public string FurnitureName { get; set; }
+        public int Count { get; set; }
+        public Status Status { get; set; }
     }
 }

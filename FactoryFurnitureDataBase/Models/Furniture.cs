@@ -8,13 +8,11 @@ namespace FactoryFurnitureDataBase.Models
 {
     public class Furniture
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
         [Required]
         public string FurnitureName { get; set; }
         [Required]
         public int Price { get; set; }
-        [Required]
-        public int Count { get; set; }
         [ForeignKey("FurnitureId")]
         public List<Order> Order { get; set; }
         [ForeignKey("FurnitureId")]

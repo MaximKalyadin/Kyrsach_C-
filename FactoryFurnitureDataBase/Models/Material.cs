@@ -15,7 +15,5 @@ namespace FactoryFurnitureDataBase.Models
         public int Count { get; set; }
         [ForeignKey("MaterialId")]
         public List<FurnitureMaterial> FurnitureMaterial { get; set; }
-        [ForeignKey("MaterialId")]
-        public List<Request> Request { get; set; }
     }
 }

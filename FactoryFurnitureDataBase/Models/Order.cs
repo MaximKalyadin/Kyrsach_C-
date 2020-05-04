@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.ComponentModel.DataAnnotations.Schema;
+using FactoryFurnitureBusinessLogic.Enum;
 
 namespace FactoryFurnitureDataBase.Models
 {
@@ -15,7 +16,10 @@ namespace FactoryFurnitureDataBase.Models
         public int ClientId { get; set; }
         public int FurnitureId { get; set; }
         public string ClientFIO { get; set; }
-        public int Price { get; set; }
+        public decimal Price { get; set; }
+        public Status Status { get; set; }
+        [Required]
+        public int Count { get; set; }
         [ForeignKey("OrderId")]
         public List<Client> Client { get; set; }
         [ForeignKey("OrderId")]

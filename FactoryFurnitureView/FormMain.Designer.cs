@@ -40,6 +40,7 @@
             this.docФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excelФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pdfФайлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonFinish = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +66,7 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(992, 122);
+            this.buttonDelete.Location = new System.Drawing.Point(991, 181);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(218, 36);
             this.buttonDelete.TabIndex = 2;
@@ -125,26 +126,36 @@
             // docФайлToolStripMenuItem
             // 
             this.docФайлToolStripMenuItem.Name = "docФайлToolStripMenuItem";
-            this.docФайлToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.docФайлToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.docФайлToolStripMenuItem.Text = "Doc файл";
             // 
             // excelФайлToolStripMenuItem
             // 
             this.excelФайлToolStripMenuItem.Name = "excelФайлToolStripMenuItem";
-            this.excelФайлToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.excelФайлToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.excelФайлToolStripMenuItem.Text = "Excel файл";
             // 
             // pdfФайлToolStripMenuItem
             // 
             this.pdfФайлToolStripMenuItem.Name = "pdfФайлToolStripMenuItem";
-            this.pdfФайлToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pdfФайлToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
             this.pdfФайлToolStripMenuItem.Text = "Pdf файл";
+            // 
+            // buttonFinish
+            // 
+            this.buttonFinish.Location = new System.Drawing.Point(991, 114);
+            this.buttonFinish.Name = "buttonFinish";
+            this.buttonFinish.Size = new System.Drawing.Size(218, 36);
+            this.buttonFinish.TabIndex = 4;
+            this.buttonFinish.Text = "Завершить заказ";
+            this.buttonFinish.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1227, 494);
+            this.Controls.Add(this.buttonFinish);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.dataGridView);
@@ -174,5 +185,6 @@
         private System.Windows.Forms.ToolStripMenuItem docФайлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excelФайлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pdfФайлToolStripMenuItem;
+        private System.Windows.Forms.Button buttonFinish;
     }
 }

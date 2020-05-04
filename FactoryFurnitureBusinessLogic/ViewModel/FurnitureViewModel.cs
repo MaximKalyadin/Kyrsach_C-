@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+using System.Runtime.Serialization;
 
 namespace FactoryFurnitureBusinessLogic.ViewModel
 {
@@ -12,7 +13,7 @@ namespace FactoryFurnitureBusinessLogic.ViewModel
         public string FurnitureName { get; set; }
         [DisplayName("Цена")]
         public int Price { get; set; }
-        [DisplayName("Количество")]
-        public int Count { get; set; }
+        [DataMember]
+        public Dictionary<int, (string, int)> FurnitureMaterials { get; set; }
     }
 }
