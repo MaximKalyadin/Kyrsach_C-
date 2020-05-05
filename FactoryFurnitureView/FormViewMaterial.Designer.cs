@@ -54,6 +54,7 @@
             this.buttonCreate.TabIndex = 1;
             this.buttonCreate.Text = "Добавить";
             this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
             // buttonUpdate
             // 

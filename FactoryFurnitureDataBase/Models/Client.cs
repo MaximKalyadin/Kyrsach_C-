@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace FactoryFurnitureDataBase.Models
@@ -12,6 +13,7 @@ namespace FactoryFurnitureDataBase.Models
         public string ClientFIO { get; set; }
         public string Adress { get; set; }
         public int? PhoneNumber { get; set; }
-        public virtual Order Order { get; set; }
+        [ForeignKey("ClientId")]
+        public virtual List<Order> Orders { set; get; }
     }
 }

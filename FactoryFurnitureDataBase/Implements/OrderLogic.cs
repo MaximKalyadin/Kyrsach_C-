@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FactoryFurnitureDataBase.Implements
 {
-    public class OrderLogic
+    public class OrderLogic : IOrderLogic
     {
         public void CreateOrUpdate(OrderBindingModel model)
         {
@@ -64,7 +64,7 @@ namespace FactoryFurnitureDataBase.Implements
             using (var context = new FactoryFurnitureDataBase())
             {
                 return context.Orders.Where(rec => model == null || rec.Id == model.Id || model.ClientId == rec.ClientId)
-                .Include(ord => ord.Furniture)
+                .Include(ord => ord.Furnitures)
                 .Select(rec => new OrderViewModel()
                 {
                     Id = rec.Id,

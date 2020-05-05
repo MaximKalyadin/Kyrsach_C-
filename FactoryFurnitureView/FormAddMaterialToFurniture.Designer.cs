@@ -31,9 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxCount = new System.Windows.Forms.TextBox();
-            this.comboBoxName = new System.Windows.Forms.ComboBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -61,14 +61,6 @@
             this.textBoxCount.Size = new System.Drawing.Size(291, 22);
             this.textBoxCount.TabIndex = 3;
             // 
-            // comboBoxName
-            // 
-            this.comboBoxName.FormattingEnabled = true;
-            this.comboBoxName.Location = new System.Drawing.Point(133, 24);
-            this.comboBoxName.Name = "comboBoxName";
-            this.comboBoxName.Size = new System.Drawing.Size(291, 24);
-            this.comboBoxName.TabIndex = 4;
-            // 
             // buttonCancel
             // 
             this.buttonCancel.Location = new System.Drawing.Point(280, 85);
@@ -77,6 +69,7 @@
             this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonSave
             // 
@@ -86,20 +79,29 @@
             this.buttonSave.TabIndex = 6;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(133, 24);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(291, 22);
+            this.textBoxName.TabIndex = 7;
             // 
             // FormAddMaterialToFurniture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(449, 135);
+            this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.comboBoxName);
             this.Controls.Add(this.textBoxCount);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.label1);
             this.Name = "FormAddMaterialToFurniture";
             this.Text = "Добавление материалов к мебели ";
+            this.Load += new System.EventHandler(this.FormAddMaterialToFurniture_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,8 +112,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox textBoxCount;
-        private System.Windows.Forms.ComboBox comboBoxName;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.TextBox textBoxName;
     }
 }

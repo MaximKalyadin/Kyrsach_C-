@@ -13,16 +13,18 @@ namespace FactoryFurnitureDataBase.Models
         [Required]
         public DateTime DataCreate { get; set; }
         public DateTime? DataImplement { get; set; }
+        [Required]
         public int ClientId { get; set; }
         public int FurnitureId { get; set; }
+        [Required]
         public string ClientFIO { get; set; }
+        [Required]
         public decimal Price { get; set; }
+        [Required]
         public Status Status { get; set; }
         [Required]
         public int Count { get; set; }
-        [ForeignKey("OrderId")]
-        public List<Client> Client { get; set; }
-        [ForeignKey("OrderId")]
-        public List<Furniture> Furniture { get; set; }
+        public virtual Client Client { set; get; }
+        public virtual Furniture Furnitures { get; set; }
     }
 }

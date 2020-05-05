@@ -112,6 +112,7 @@
             this.создатьМатериалыToolStripMenuItem.Name = "создатьМатериалыToolStripMenuItem";
             this.создатьМатериалыToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.создатьМатериалыToolStripMenuItem.Text = "Создать материалы";
+            this.создатьМатериалыToolStripMenuItem.Click += new System.EventHandler(this.создатьМатериалыToolStripMenuItem_Click);
             // 
             // отчетыToolStripMenuItem
             // 

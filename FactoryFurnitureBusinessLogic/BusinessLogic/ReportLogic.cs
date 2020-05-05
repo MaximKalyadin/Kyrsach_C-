@@ -4,7 +4,8 @@ using System.Text;
 
 namespace FactoryFurnitureBusinessLogic.BusinessLogic
 {
-    class ReportLogic
+    public class ReportLogic
     {
+
     }
 }

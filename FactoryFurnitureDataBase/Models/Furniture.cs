@@ -14,8 +14,8 @@ namespace FactoryFurnitureDataBase.Models
         [Required]
         public int Price { get; set; }
         [ForeignKey("FurnitureId")]
-        public List<Order> Order { get; set; }
+        public virtual List<Order> Order { get; set; }
         [ForeignKey("FurnitureId")]
-        public List<FurnitureMaterial> FurnitureMaterial { get; set; }
+        public virtual List<FurnitureMaterial> FurnitureMaterial { get; set; }
     }
 }
