@@ -35,7 +35,6 @@ namespace FactoryFurnitureDataBase.Implements
                 context.SaveChanges();
             }
         }
-
         public void Delete(ClientBindingModel model)
         {
             using (var context = new FactoryFurnitureDataBase())
