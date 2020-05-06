@@ -38,7 +38,7 @@ namespace FactoryFurnitureView
             List<MaterialViewModel> list = logic.Read(null);
             if (list != null)
             {
-                comboBoxName.DisplayMember = "FurnitureName";
+                comboBoxName.DisplayMember = "MaterialName";
                 comboBoxName.ValueMember = "Id";
                 comboBoxName.DataSource = list;
                 comboBoxName.SelectedItem = null;

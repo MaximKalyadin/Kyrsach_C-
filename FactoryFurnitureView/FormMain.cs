@@ -29,6 +29,27 @@ namespace FactoryFurnitureView
             this.reportLogic = reportLogic;
         }
 
+        private void LoadData()
+        {
+            try
+            {
+                var list = orderLogic.Read(null);
+                if (list != null)
+                {
+                    dataGridView.DataSource = list;
+                    dataGridView.Columns[0].Visible = false;
+                    dataGridView.Columns[2].Visible = false;
+                    dataGridView.Columns[8].Visible = false;
+                    dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+                }
+                dataGridView.Update();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void создатьМатериалыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = Container.Resolve<FormViewMaterial>();
@@ -49,22 +70,31 @@ namespace FactoryFurnitureView
 
         private void buttonCreate_Click(object sender, EventArgs e)
         {
-
+            var form = Container.Resolve<FormCreateOrder>();
+            form.ShowDialog();
+            LoadData();
         }
 
         private void buttonFinish_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void buttonDelete_Click(object sender, EventArgs e)
-        {
-
+            if (dataGridView.SelectedRows.Count == 1)
+            {
+                int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
+                try
+                {
+                    logic.FinishOrder(new ChangeStatusBindingModel { OrderId = id });
+                    LoadData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-
+            LoadData();
         }
     }
 }

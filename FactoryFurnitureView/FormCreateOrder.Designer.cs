@@ -91,6 +91,7 @@
             this.comboBoxFurniture.Name = "comboBoxFurniture";
             this.comboBoxFurniture.Size = new System.Drawing.Size(358, 24);
             this.comboBoxFurniture.TabIndex = 5;
+            this.comboBoxFurniture.SelectedIndexChanged += new System.EventHandler(this.comboBoxFurniture_SelectedIndexChanged);
             // 
             // textBoxCount
             // 
@@ -98,6 +99,7 @@
             this.textBoxCount.Name = "textBoxCount";
             this.textBoxCount.Size = new System.Drawing.Size(358, 22);
             this.textBoxCount.TabIndex = 6;
+            this.textBoxCount.TextChanged += new System.EventHandler(this.textBoxCount_TextChanged);
             // 
             // textBoxPrice
             // 
@@ -114,6 +116,7 @@
             this.buttonCancel.TabIndex = 8;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonSave
             // 
@@ -123,7 +126,7 @@
             this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "Сохранить ";
             this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.button2_Click);
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // FormCreateOrder
             // 
@@ -142,6 +145,7 @@
             this.Controls.Add(this.labelClient);
             this.Name = "FormCreateOrder";
             this.Text = "Добавление заказа";
+            this.Load += new System.EventHandler(this.FormCreateOrder_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

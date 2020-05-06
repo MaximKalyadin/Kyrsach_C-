@@ -30,7 +30,6 @@
         {
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.buttonCreate = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.дополнительноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьКлиентовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,16 +63,6 @@
             this.buttonCreate.Text = "Создать заказ";
             this.buttonCreate.UseVisualStyleBackColor = true;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(991, 181);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(218, 36);
-            this.buttonDelete.TabIndex = 2;
-            this.buttonDelete.Text = "Удалить заказ";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // menuStrip1
             // 
@@ -162,7 +151,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1227, 494);
             this.Controls.Add(this.buttonFinish);
-            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.menuStrip1);
@@ -182,7 +170,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button buttonCreate;
-        private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem дополнительноToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem создатьКлиентовToolStripMenuItem;

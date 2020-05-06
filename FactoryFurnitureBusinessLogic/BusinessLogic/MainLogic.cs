@@ -10,9 +10,11 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
     public class MainLogic
     {
         private readonly IOrderLogic orderLogic;
-        public MainLogic(IOrderLogic orderLogic)
+        private readonly IMaterialLogic materialLogic;
+        public MainLogic(IOrderLogic orderLogic, IMaterialLogic materialLogic)
         {
             this.orderLogic = orderLogic;
+            this.materialLogic = materialLogic;
         }
         public void CreateOrder(CreateOrderBindingModel model)
         {
@@ -34,6 +36,7 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
             {
                 throw new Exception("Не найден заказ");
             }
+            (materialLogic as IMaterialLogic).RemoveMaterials(order.FurnitureId, order.Count);
             if (order.Status != Status.Start)
             {
                 throw new Exception("Заказ не в статусе \"Принят\"");

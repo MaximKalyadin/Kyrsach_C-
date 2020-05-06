@@ -8,7 +8,7 @@ namespace FactoryFurnitureDataBase.Models
 {
     public class Client
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
         [Required]
         public string ClientFIO { get; set; }
         public string Adress { get; set; }

@@ -71,5 +71,44 @@ namespace FactoryFurnitureDataBase.Implements
                 .ToList();
             }
         }
+
+        public void RemoveMaterials(int FurId, int count)
+        {
+            using (var context = new FactoryFurnitureDataBase())
+            {
+                using (var transaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var matFur = context.FurnitureMaterials.Where(dm => dm.Id == FurId).ToList();
+                        var mat = context.Materials.ToList();
+                        foreach (var material in matFur)
+                        {
+                            var matCount = material.Count * count;
+                            foreach  (var sm in mat)
+                            {
+                                if (sm.Id == material.MaterialId && sm.Count >= matCount)
+                                {
+                                    sm.Count -= matCount;
+                                    matCount = 0;
+                                    context.SaveChanges();
+                                    break;
+                                }
+                            }
+                            if (matCount > 0)
+                            {
+                                throw new Exception("Не хватает материалов");
+                            }
+                        }
+                        transaction.Commit();
+                    } 
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+                }
+            }
+        }
     }
 }

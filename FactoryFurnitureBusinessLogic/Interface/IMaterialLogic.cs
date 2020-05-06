@@ -11,5 +11,6 @@ namespace FactoryFurnitureBusinessLogic.Interface
         List<MaterialViewModel> Read(MaterialBindingModel model);
         void CreateOrUpdate(MaterialBindingModel model);
         void Delete(MaterialBindingModel model);
+        void RemoveMaterials(int FurnitureId, int Count);
     }
 }
