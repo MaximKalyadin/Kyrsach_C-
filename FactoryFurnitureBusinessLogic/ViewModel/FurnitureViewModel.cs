@@ -12,7 +12,7 @@ namespace FactoryFurnitureBusinessLogic.ViewModel
         [DisplayName("Наименование мебели")]
         public string FurnitureName { get; set; }
         [DisplayName("Цена")]
-        public int Price { get; set; }
+        public decimal Price { get; set; }
         [DataMember]
         public Dictionary<int, (string, int)> FurnitureMaterials { get; set; }
     }

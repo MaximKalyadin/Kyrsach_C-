@@ -34,5 +34,37 @@ namespace FactoryFurnitureView
             var form = Container.Resolve<FormViewMaterial>();
             form.ShowDialog();
         }
+
+        private void создатьКлиентовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormViewClient>();
+            form.ShowDialog();
+        }
+
+        private void создатьМебельToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = Container.Resolve<FormViewFurniture>();
+            form.ShowDialog();
+        }
+
+        private void buttonCreate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonFinish_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

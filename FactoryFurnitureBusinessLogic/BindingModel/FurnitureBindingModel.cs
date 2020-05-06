@@ -8,7 +8,7 @@ namespace FactoryFurnitureBusinessLogic.BindingModel
     {
         public int? Id { get; set; }
         public string FurnitureName { get; set; }
-        public int Price { get; set; }
+        public decimal Price { get; set; }
         public Dictionary<int, (string, int)> FurnitureMaterials { get; set; }
     }
 }

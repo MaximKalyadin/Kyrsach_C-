@@ -63,6 +63,7 @@
             this.buttonCreate.TabIndex = 1;
             this.buttonCreate.Text = "Создать заказ";
             this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
             // buttonDelete
             // 
@@ -72,6 +73,7 @@
             this.buttonDelete.TabIndex = 2;
             this.buttonDelete.Text = "Удалить заказ";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // menuStrip1
             // 
@@ -100,12 +102,14 @@
             this.создатьКлиентовToolStripMenuItem.Name = "создатьКлиентовToolStripMenuItem";
             this.создатьКлиентовToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.создатьКлиентовToolStripMenuItem.Text = "Создать клиентов";
+            this.создатьКлиентовToolStripMenuItem.Click += new System.EventHandler(this.создатьКлиентовToolStripMenuItem_Click);
             // 
             // создатьМебельToolStripMenuItem
             // 
             this.создатьМебельToolStripMenuItem.Name = "создатьМебельToolStripMenuItem";
             this.создатьМебельToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.создатьМебельToolStripMenuItem.Text = "Создать мебель";
+            this.создатьМебельToolStripMenuItem.Click += new System.EventHandler(this.создатьМебельToolStripMenuItem_Click);
             // 
             // создатьМатериалыToolStripMenuItem
             // 
@@ -150,6 +154,7 @@
             this.buttonFinish.TabIndex = 4;
             this.buttonFinish.Text = "Завершить заказ";
             this.buttonFinish.UseVisualStyleBackColor = true;
+            this.buttonFinish.Click += new System.EventHandler(this.buttonFinish_Click);
             // 
             // FormMain
             // 
@@ -164,6 +169,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.Text = "Главная";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

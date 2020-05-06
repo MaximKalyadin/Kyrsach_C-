@@ -33,11 +33,11 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.groupBox = new System.Windows.Forms.GroupBox();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonUpdate = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonRefactor = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.groupBox.SuspendLayout();
@@ -90,6 +90,46 @@
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Материалы";
             // 
+            // buttonRefactor
+            // 
+            this.buttonRefactor.Location = new System.Drawing.Point(530, 255);
+            this.buttonRefactor.Name = "buttonRefactor";
+            this.buttonRefactor.Size = new System.Drawing.Size(149, 49);
+            this.buttonRefactor.TabIndex = 4;
+            this.buttonRefactor.Text = "Изменить";
+            this.buttonRefactor.UseVisualStyleBackColor = true;
+            this.buttonRefactor.Click += new System.EventHandler(this.buttonRefactor_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(530, 179);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(149, 49);
+            this.buttonDelete.TabIndex = 3;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Location = new System.Drawing.Point(530, 105);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(149, 49);
+            this.buttonUpdate.TabIndex = 2;
+            this.buttonUpdate.Text = "Обновить";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(530, 30);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(149, 49);
+            this.buttonAdd.TabIndex = 1;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -100,42 +140,6 @@
             this.dataGridView.Size = new System.Drawing.Size(495, 426);
             this.dataGridView.TabIndex = 0;
             // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(530, 30);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(149, 49);
-            this.buttonAdd.TabIndex = 1;
-            this.buttonAdd.Text = "Добавить";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.Location = new System.Drawing.Point(530, 105);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(149, 49);
-            this.buttonUpdate.TabIndex = 2;
-            this.buttonUpdate.Text = "Обновить";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(530, 179);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(149, 49);
-            this.buttonDelete.TabIndex = 3;
-            this.buttonDelete.Text = "Удалить";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            // 
-            // buttonRefactor
-            // 
-            this.buttonRefactor.Location = new System.Drawing.Point(530, 255);
-            this.buttonRefactor.Name = "buttonRefactor";
-            this.buttonRefactor.Size = new System.Drawing.Size(149, 49);
-            this.buttonRefactor.TabIndex = 4;
-            this.buttonRefactor.Text = "Изменить";
-            this.buttonRefactor.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(408, 621);
@@ -144,6 +148,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Сохранить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonCancel
             // 
@@ -153,6 +158,7 @@
             this.buttonCancel.TabIndex = 6;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // FormCreateFurniture
             // 
@@ -168,6 +174,7 @@
             this.Controls.Add(this.labelName);
             this.Name = "FormCreateFurniture";
             this.Text = "Создание Мебели";
+            this.Load += new System.EventHandler(this.FormCreateFurniture_Load);
             this.groupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);

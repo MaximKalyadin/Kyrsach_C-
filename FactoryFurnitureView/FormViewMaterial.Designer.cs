@@ -64,6 +64,7 @@
             this.buttonUpdate.TabIndex = 2;
             this.buttonUpdate.Text = "Обновить";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonDelete
             // 
@@ -73,6 +74,7 @@
             this.buttonDelete.TabIndex = 3;
             this.buttonDelete.Text = "Удалить";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonRefactor
             // 
@@ -82,6 +84,7 @@
             this.buttonRefactor.TabIndex = 4;
             this.buttonRefactor.Text = "Изменить";
             this.buttonRefactor.UseVisualStyleBackColor = true;
+            this.buttonRefactor.Click += new System.EventHandler(this.buttonRefactor_Click);
             // 
             // FormViewMaterial
             // 
@@ -95,6 +98,7 @@
             this.Controls.Add(this.dataGridView);
             this.Name = "FormViewMaterial";
             this.Text = "Материалы";
+            this.Load += new System.EventHandler(this.FormViewMaterial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 

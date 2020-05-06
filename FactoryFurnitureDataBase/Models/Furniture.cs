@@ -12,7 +12,7 @@ namespace FactoryFurnitureDataBase.Models
         [Required]
         public string FurnitureName { get; set; }
         [Required]
-        public int Price { get; set; }
+        public decimal Price { get; set; }
         [ForeignKey("FurnitureId")]
         public virtual List<Order> Order { get; set; }
         [ForeignKey("FurnitureId")]

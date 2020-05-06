@@ -54,6 +54,7 @@
             this.buttonCreate.TabIndex = 1;
             this.buttonCreate.Text = "Добавить";
             this.buttonCreate.UseVisualStyleBackColor = true;
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
             // buttonUpdate
             // 
@@ -63,6 +64,7 @@
             this.buttonUpdate.TabIndex = 2;
             this.buttonUpdate.Text = "Обновить";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonDelete
             // 
@@ -72,6 +74,7 @@
             this.buttonDelete.TabIndex = 3;
             this.buttonDelete.Text = "Удалить";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonRefactor
             // 
@@ -81,6 +84,7 @@
             this.buttonRefactor.TabIndex = 4;
             this.buttonRefactor.Text = "Обновить";
             this.buttonRefactor.UseVisualStyleBackColor = true;
+            this.buttonRefactor.Click += new System.EventHandler(this.buttonRefactor_Click);
             // 
             // FormViewClient
             // 
@@ -94,6 +98,7 @@
             this.Controls.Add(this.dataGridView);
             this.Name = "FormViewClient";
             this.Text = "Клиенты";
+            this.Load += new System.EventHandler(this.FormViewClient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 

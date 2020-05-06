@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Unity;
 using FactoryFurnitureBusinessLogic.Interface;
 using FactoryFurnitureBusinessLogic.BindingModel;
+using FactoryFurnitureBusinessLogic.ViewModel;
 
 namespace FactoryFurnitureView
 {
@@ -17,64 +18,49 @@ namespace FactoryFurnitureView
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
-        public int Id { set { id = value; } }
-        private readonly IMaterialLogic logic;
-        private int? id;
+        public int Id
+        {
+            get { return Convert.ToInt32(comboBoxName.SelectedValue); }
+            set { comboBoxName.SelectedValue = value; }
+        }
+        public string MaterialName { get { return comboBoxName.Text; } }
+        public int Count
+        {
+            get { return Convert.ToInt32(textBoxCount.Text); }
+            set
+            {
+                textBoxCount.Text = value.ToString();
+            }
+        }
         public FormAddMaterialToFurniture(IMaterialLogic logic)
         {
             InitializeComponent();
-            this.logic = logic;
-        }
-
-        private void FormAddMaterialToFurniture_Load(object sender, EventArgs e)
-        {
-            if (id.HasValue)
+            List<MaterialViewModel> list = logic.Read(null);
+            if (list != null)
             {
-                try
-                {
-                    var view = logic.Read(new MaterialBindingModel { Id = id })?[0];
-                    if (view != null)
-                    {
-                        textBoxName.Text = view.MaterialName;
-                        textBoxCount.Text = view.Count.ToString();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                comboBoxName.DisplayMember = "FurnitureName";
+                comboBoxName.ValueMember = "Id";
+                comboBoxName.DataSource = list;
+                comboBoxName.SelectedItem = null;
             }
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxName.Text))
-            {
-                MessageBox.Show("Заполните название", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
             if (string.IsNullOrEmpty(textBoxCount.Text))
             {
-                MessageBox.Show("Заполните количество", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Заполните поле Количество", "Ошибка",
+               MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            try
+            if (comboBoxName.SelectedValue == null)
             {
-                logic.CreateOrUpdate(new MaterialBindingModel
-                {
-                    Id = id,
-                    MaterialName = textBoxName.Text,
-                    Count = Convert.ToInt32(textBoxCount.Text)
-                });
-                MessageBox.Show("Сохранение прошло успешно", "Сообщение",
-               MessageBoxButtons.OK, MessageBoxIcon.Information);
-                DialogResult = DialogResult.OK;
-                Close();
+                MessageBox.Show("Выберите материал", "Ошибка", MessageBoxButtons.OK,
+               MessageBoxIcon.Error);
+                return;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

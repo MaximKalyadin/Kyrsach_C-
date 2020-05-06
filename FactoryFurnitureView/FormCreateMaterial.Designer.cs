@@ -76,6 +76,7 @@
             this.buttonCancel.TabIndex = 4;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonSave
             // 
@@ -85,6 +86,7 @@
             this.buttonSave.TabIndex = 5;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // FormCreateMaterial
             // 
@@ -99,6 +101,7 @@
             this.Controls.Add(this.labelName);
             this.Name = "FormCreateMaterial";
             this.Text = "Создание материалов";
+            this.Load += new System.EventHandler(this.FormCreateMaterial_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
