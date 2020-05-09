@@ -29,7 +29,7 @@ namespace FactoryFurnitureDataBase.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FurnitureName = table.Column<string>(nullable: false),
-                    Price = table.Column<int>(nullable: false)
+                    Price = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {

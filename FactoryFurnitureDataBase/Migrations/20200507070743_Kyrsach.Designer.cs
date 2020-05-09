@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FactoryFurnitureDataBase.Migrations
 {
     [DbContext(typeof(FactoryFurnitureDataBase))]
-    [Migration("20200505140127_Kyrsach")]
+    [Migration("20200507070743_Kyrsach")]
     partial class Kyrsach
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,7 @@ namespace FactoryFurnitureDataBase.Migrations
 
             modelBuilder.Entity("FactoryFurnitureDataBase.Models.Client", b =>
                 {
-                    b.Property<int?>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -54,8 +54,8 @@ namespace FactoryFurnitureDataBase.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 

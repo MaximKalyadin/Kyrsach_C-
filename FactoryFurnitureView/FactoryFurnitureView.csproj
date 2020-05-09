@@ -180,6 +180,18 @@
     <Compile Include="FormAddMaterialToFurniture.Designer.cs">
       <DependentUpon>FormAddMaterialToFurniture.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddMaterialToReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddMaterialToReport.Designer.cs">
+      <DependentUpon>FormAddMaterialToReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChooseFormat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChooseFormat.Designer.cs">
+      <DependentUpon>FormChooseFormat.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCreateFurniture.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +215,18 @@
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNotMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNotMaterial.Designer.cs">
+      <DependentUpon>FormNotMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportRequest.Designer.cs">
+      <DependentUpon>FormReportRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="FormViewClient.cs">
       <SubType>Form</SubType>
@@ -233,6 +257,12 @@
     <EmbeddedResource Include="FormAddMaterialToFurniture.resx">
       <DependentUpon>FormAddMaterialToFurniture.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddMaterialToReport.resx">
+      <DependentUpon>FormAddMaterialToReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChooseFormat.resx">
+      <DependentUpon>FormChooseFormat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCreateFurniture.resx">
       <DependentUpon>FormCreateFurniture.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +274,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNotMaterial.resx">
+      <DependentUpon>FormNotMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportRequest.resx">
+      <DependentUpon>FormReportRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormViewClient.resx">
       <DependentUpon>FormViewClient.cs</DependentUpon>

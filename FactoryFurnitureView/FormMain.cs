@@ -82,7 +82,12 @@ namespace FactoryFurnitureView
                 int id = Convert.ToInt32(dataGridView.SelectedRows[0].Cells[0].Value);
                 try
                 {
-                    logic.FinishOrder(new ChangeStatusBindingModel { OrderId = id });
+                    if (!logic.FinishOrder(new ChangeStatusBindingModel { OrderId = id }))
+                    {
+                        var form = Container.Resolve<FormNotMaterial>();
+                        form.ShowDialog();
+                        LoadData();
+                    }
                     LoadData();
                 }
                 catch (Exception ex)

@@ -72,7 +72,7 @@ namespace FactoryFurnitureDataBase.Implements
             }
         }
 
-        public void RemoveMaterials(int FurId, int count)
+        public bool RemoveMaterials(int FurId, int count)
         {
             using (var context = new FactoryFurnitureDataBase())
             {
@@ -97,10 +97,11 @@ namespace FactoryFurnitureDataBase.Implements
                             }
                             if (matCount > 0)
                             {
-                                throw new Exception("Не хватает материалов");
+                                return false;
                             }
                         }
                         transaction.Commit();
+                        return true;
                     } 
                     catch (Exception)
                     {
