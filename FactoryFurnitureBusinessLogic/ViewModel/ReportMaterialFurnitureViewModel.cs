@@ -8,6 +8,5 @@ namespace FactoryFurnitureBusinessLogic.ViewModel
     {
         public string MaterialName { get; set; }
         public int Count { get; set; }
-        public List<Tuple<string, int>> Furnitures { get; set; }
     }
 }

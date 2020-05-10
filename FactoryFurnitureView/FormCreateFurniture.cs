@@ -26,7 +26,7 @@ namespace FactoryFurnitureView
         {
             InitializeComponent();
             dataGridView.Columns.Add("Id", "Id");
-            dataGridView.Columns.Add("FurnitureName", "Мебель");
+            dataGridView.Columns.Add("MaterialName", "Материал");
             dataGridView.Columns.Add("Count", "Количество");
             dataGridView.Columns[0].Visible = false;
             dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

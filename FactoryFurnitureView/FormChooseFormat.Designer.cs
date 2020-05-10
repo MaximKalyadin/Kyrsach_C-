@@ -28,35 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.buttonAddmaterial = new System.Windows.Forms.Button();
+            this.buttonWord = new System.Windows.Forms.Button();
+            this.buttonSendToExcel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(467, 256);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Location = new System.Drawing.Point(0, 1);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.Size = new System.Drawing.Size(570, 405);
+            this.dataGridView.TabIndex = 0;
+            // 
+            // buttonAddmaterial
+            // 
+            this.buttonAddmaterial.Location = new System.Drawing.Point(587, 12);
+            this.buttonAddmaterial.Name = "buttonAddmaterial";
+            this.buttonAddmaterial.Size = new System.Drawing.Size(147, 47);
+            this.buttonAddmaterial.TabIndex = 1;
+            this.buttonAddmaterial.Text = "Добавить материалы ";
+            this.buttonAddmaterial.UseVisualStyleBackColor = true;
+            this.buttonAddmaterial.Click += new System.EventHandler(this.buttonAddmaterial_Click);
+            // 
+            // buttonWord
+            // 
+            this.buttonWord.Location = new System.Drawing.Point(587, 76);
+            this.buttonWord.Name = "buttonWord";
+            this.buttonWord.Size = new System.Drawing.Size(147, 47);
+            this.buttonWord.TabIndex = 2;
+            this.buttonWord.Text = "Отправить в Word";
+            this.buttonWord.UseVisualStyleBackColor = true;
+            // 
+            // buttonSendToExcel
+            // 
+            this.buttonSendToExcel.Location = new System.Drawing.Point(587, 140);
+            this.buttonSendToExcel.Name = "buttonSendToExcel";
+            this.buttonSendToExcel.Size = new System.Drawing.Size(147, 47);
+            this.buttonSendToExcel.TabIndex = 3;
+            this.buttonSendToExcel.Text = "Отправить в Excel";
+            this.buttonSendToExcel.UseVisualStyleBackColor = true;
+            this.buttonSendToExcel.Click += new System.EventHandler(this.button3_Click);
             // 
             // FormChooseFormat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 544);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(750, 408);
+            this.Controls.Add(this.buttonSendToExcel);
+            this.Controls.Add(this.buttonWord);
+            this.Controls.Add(this.buttonAddmaterial);
+            this.Controls.Add(this.dataGridView);
             this.Name = "FormChooseFormat";
-            this.Text = "FormChooseFormat";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Выбор формата";
+            this.Load += new System.EventHandler(this.FormChooseFormat_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Button buttonAddmaterial;
+        private System.Windows.Forms.Button buttonWord;
+        private System.Windows.Forms.Button buttonSendToExcel;
     }
 }

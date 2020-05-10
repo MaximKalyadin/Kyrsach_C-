@@ -76,6 +76,7 @@
             this.buttonSave.TabIndex = 4;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // FormAddMaterialToReport
             // 
@@ -88,7 +89,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormAddMaterialToReport";
-            this.Text = "FormAddMaterialToReport";
+            this.Text = "Добавление материалов";
             this.ResumeLayout(false);
             this.PerformLayout();
 

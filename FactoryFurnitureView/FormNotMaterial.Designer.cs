@@ -60,6 +60,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "FormNotMaterial";
+            this.Text = "Нехватает материалов";
             this.ResumeLayout(false);
             this.PerformLayout();
 

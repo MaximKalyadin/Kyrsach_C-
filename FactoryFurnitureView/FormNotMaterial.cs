@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unity;
 
 namespace FactoryFurnitureView
 {
     public partial class FormNotMaterial : Form
     {
+        [Dependency]
+        public new IUnityContainer Container { get; set; }
         public FormNotMaterial()
         {
             InitializeComponent();
@@ -19,7 +22,8 @@ namespace FactoryFurnitureView
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            var form = Container.Resolve<FormChooseFormat>();
+            form.ShowDialog();
         }
     }
 }
