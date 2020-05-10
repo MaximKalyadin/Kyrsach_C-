@@ -4,7 +4,6 @@ using System.Text;
 using FactoryFurnitureBusinessLogic.BindingModel;
 using FactoryFurnitureBusinessLogic.HelperModel;
 using FactoryFurnitureBusinessLogic.Interface;
-using FactoryFurnitureBusinessLogic.ViewModel;
 
 namespace FactoryFurnitureBusinessLogic.BusinessLogic
 {
@@ -17,15 +16,15 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
             this.materialLogic = materialLogic;
         }
 
-        /*public void SaveMaterialToWordFile(ReportBindingModel model)
-        {
+        public void SaveMaterialToWordFile(ReportBindingModel model, Dictionary<int, (string, int)> materials)
+        { 
             SaveToWord.CreateDoc(new WordInfo
             {
                 FileName = model.FileName,
-                Title = "Пиццы",
-                //Materials = pizzaLogic.Read(null)
+                Title = "Mатериалы",
+                Materials = materials
             });
-        }*/
+        }
 
         public void SaveMaterialToExcelFile(ReportBindingModel model, Dictionary<int, (string, int) > materials)
         {
@@ -35,6 +34,7 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
                 Title = "Материалы",
                 Materials = materials
             });
+
         }
 
     }

@@ -32,17 +32,19 @@
             this.buttonAddmaterial = new System.Windows.Forms.Button();
             this.buttonWord = new System.Windows.Forms.Button();
             this.buttonSendToExcel = new System.Windows.Forms.Button();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(0, 1);
+            this.dataGridView.Location = new System.Drawing.Point(0, 40);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(570, 405);
+            this.dataGridView.Size = new System.Drawing.Size(570, 366);
             this.dataGridView.TabIndex = 0;
             // 
             // buttonAddmaterial
@@ -63,6 +65,7 @@
             this.buttonWord.TabIndex = 2;
             this.buttonWord.Text = "Отправить в Word";
             this.buttonWord.UseVisualStyleBackColor = true;
+            this.buttonWord.Click += new System.EventHandler(this.buttonWord_Click);
             // 
             // buttonSendToExcel
             // 
@@ -74,11 +77,29 @@
             this.buttonSendToExcel.UseVisualStyleBackColor = true;
             this.buttonSendToExcel.Click += new System.EventHandler(this.button3_Click);
             // 
+            // labelEmail
+            // 
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Location = new System.Drawing.Point(12, 12);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(138, 17);
+            this.labelEmail.TabIndex = 4;
+            this.labelEmail.Text = "Почта отправителя";
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Location = new System.Drawing.Point(156, 12);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(414, 22);
+            this.textBoxEmail.TabIndex = 5;
+            // 
             // FormChooseFormat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 408);
+            this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.buttonSendToExcel);
             this.Controls.Add(this.buttonWord);
             this.Controls.Add(this.buttonAddmaterial);
@@ -88,6 +109,7 @@
             this.Load += new System.EventHandler(this.FormChooseFormat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -97,5 +119,7 @@
         private System.Windows.Forms.Button buttonAddmaterial;
         private System.Windows.Forms.Button buttonWord;
         private System.Windows.Forms.Button buttonSendToExcel;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.TextBox textBoxEmail;
     }
 }

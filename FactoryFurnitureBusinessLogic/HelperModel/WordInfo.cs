@@ -9,6 +9,6 @@ namespace FactoryFurnitureBusinessLogic.HelperModel
     {
         public string FileName { get; set; }
         public string Title { get; set; }
-        public List<ReportMaterialFurnitureViewModel> Materials { get; set; }
+        public Dictionary<int, (string, int)> Materials { get; set; }
     }
 }
