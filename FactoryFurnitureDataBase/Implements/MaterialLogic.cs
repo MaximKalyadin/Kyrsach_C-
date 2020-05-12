@@ -111,5 +111,18 @@ namespace FactoryFurnitureDataBase.Implements
                 }
             }
         }
+
+        public void AddMaterial(Dictionary<int, (string, int)> material)
+        {
+            using (var context = new FactoryFurnitureDataBase())
+            {
+                foreach (var elem in material)
+                {
+                    Material element = context.Materials.FirstOrDefault(rec => rec.MaterialName == elem.Value.Item1);
+                    element.Count += elem.Value.Item2;
+                    context.SaveChanges();
+                }
+            }
+        }
     }
 }

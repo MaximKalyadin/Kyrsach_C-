@@ -12,5 +12,6 @@ namespace FactoryFurnitureBusinessLogic.Interface
         void CreateOrUpdate(MaterialBindingModel model);
         void Delete(MaterialBindingModel model);
         bool RemoveMaterials(int FurnitureId, int Count);
+        void AddMaterial(Dictionary<int, (string, int)> material);
     }
 }

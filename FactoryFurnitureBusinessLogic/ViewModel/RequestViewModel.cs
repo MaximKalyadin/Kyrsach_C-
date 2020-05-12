@@ -11,7 +11,7 @@ namespace FactoryFurnitureBusinessLogic.ViewModel
         [DisplayName("Название заявки")]
         public string RequestName { get; set; }
         [DisplayName("Дата заявки")]
-        public DateTime DataCreate { get; set; }
+        public DateTime? DataCreate { get; set; }
         public Dictionary<int, (string, int)> RequestMaterials { get; set; }
     }
 }

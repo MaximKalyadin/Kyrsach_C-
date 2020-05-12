@@ -63,13 +63,5 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
             }
             
         }
-
-        public void AddMaterial(MaterialViewModel model, int count)
-        {
-            materialLogic.CreateOrUpdate(new MaterialBindingModel()
-            {
-
-            });
-        }
     }
 }

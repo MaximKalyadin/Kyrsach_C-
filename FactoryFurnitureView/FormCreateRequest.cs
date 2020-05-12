@@ -24,9 +24,10 @@ namespace FactoryFurnitureView
         public int Id { set { id = value; } }
         private readonly IRequestLogic logic;
         private readonly ReportLogic reportLogic;
+        private readonly IMaterialLogic materialLogic;
         private int? id;
         private Dictionary<int, (string, int)> material; //= new Dictionary<int, (string, int)>();
-        public FormCreateRequest(IRequestLogic logic, ReportLogic reportLogic)
+        public FormCreateRequest(IRequestLogic logic, ReportLogic reportLogic, IMaterialLogic materialLogic)
         {
             InitializeComponent();
             dataGridView.Columns.Add("Id", "Id");
@@ -36,6 +37,7 @@ namespace FactoryFurnitureView
             dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             this.logic = logic;
             this.reportLogic = reportLogic;
+            this.materialLogic = materialLogic;
         }
 
         private void LoadData()
@@ -142,6 +144,7 @@ namespace FactoryFurnitureView
                     DataCreate = DateTime.Now,
                     RequestMaterials = material
                 });
+                materialLogic.AddMaterial(material);
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение",
                MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DialogResult = DialogResult.OK;

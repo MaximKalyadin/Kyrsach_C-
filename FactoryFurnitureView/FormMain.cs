@@ -108,7 +108,8 @@ namespace FactoryFurnitureView
 
         private void отчетПоМатериаламToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var form = Container.Resolve<FormReportRequest>();
+            form.ShowDialog();
         }
     }
 }

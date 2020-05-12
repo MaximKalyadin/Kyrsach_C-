@@ -47,12 +47,13 @@
             this.buttonSave.TabIndex = 1;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // FormReportRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 54);
+            this.ClientSize = new System.Drawing.Size(437, 53);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.dateTimePicker);
             this.Name = "FormReportRequest";
