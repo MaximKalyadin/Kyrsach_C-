@@ -36,9 +36,9 @@
             this.создатьМебельToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьМатериалыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonFinish = new System.Windows.Forms.Button();
             this.заявкиНаПополнениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетПоМатериаламToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonFinish = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -115,16 +115,6 @@
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.отчетыToolStripMenuItem.Text = "Отчеты";
             // 
-            // buttonFinish
-            // 
-            this.buttonFinish.Location = new System.Drawing.Point(991, 114);
-            this.buttonFinish.Name = "buttonFinish";
-            this.buttonFinish.Size = new System.Drawing.Size(218, 36);
-            this.buttonFinish.TabIndex = 4;
-            this.buttonFinish.Text = "Завершить заказ";
-            this.buttonFinish.UseVisualStyleBackColor = true;
-            this.buttonFinish.Click += new System.EventHandler(this.buttonFinish_Click);
-            // 
             // заявкиНаПополнениеToolStripMenuItem
             // 
             this.заявкиНаПополнениеToolStripMenuItem.Name = "заявкиНаПополнениеToolStripMenuItem";
@@ -136,8 +126,18 @@
             // 
             this.отчетПоМатериаламToolStripMenuItem.Name = "отчетПоМатериаламToolStripMenuItem";
             this.отчетПоМатериаламToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
-            this.отчетПоМатериаламToolStripMenuItem.Text = "Отчет по материалам";
+            this.отчетПоМатериаламToolStripMenuItem.Text = "Полный отчет";
             this.отчетПоМатериаламToolStripMenuItem.Click += new System.EventHandler(this.отчетПоМатериаламToolStripMenuItem_Click);
+            // 
+            // buttonFinish
+            // 
+            this.buttonFinish.Location = new System.Drawing.Point(991, 114);
+            this.buttonFinish.Name = "buttonFinish";
+            this.buttonFinish.Size = new System.Drawing.Size(218, 36);
+            this.buttonFinish.TabIndex = 4;
+            this.buttonFinish.Text = "Завершить заказ";
+            this.buttonFinish.UseVisualStyleBackColor = true;
+            this.buttonFinish.Click += new System.EventHandler(this.buttonFinish_Click);
             // 
             // FormMain
             // 

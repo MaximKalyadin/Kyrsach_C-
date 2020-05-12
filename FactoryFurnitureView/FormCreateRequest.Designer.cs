@@ -161,7 +161,7 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.button1);
             this.Name = "FormCreateRequest";
-            this.Text = "FormCreateRequest";
+            this.Text = "Создание заявок";
             this.Load += new System.EventHandler(this.FormCreateRequest_Load);
             this.groupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

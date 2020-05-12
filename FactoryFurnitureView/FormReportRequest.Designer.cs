@@ -28,44 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonFormirovat = new System.Windows.Forms.Button();
-            this.buttonSend = new System.Windows.Forms.Button();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // buttonFormirovat
+            // dateTimePicker
             // 
-            this.buttonFormirovat.Location = new System.Drawing.Point(12, 12);
-            this.buttonFormirovat.Name = "buttonFormirovat";
-            this.buttonFormirovat.Size = new System.Drawing.Size(160, 47);
-            this.buttonFormirovat.TabIndex = 0;
-            this.buttonFormirovat.Text = "Сформировать";
-            this.buttonFormirovat.UseVisualStyleBackColor = true;
+            this.dateTimePicker.Location = new System.Drawing.Point(12, 12);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker.TabIndex = 0;
             // 
-            // buttonSend
+            // buttonSave
             // 
-            this.buttonSend.Location = new System.Drawing.Point(189, 12);
-            this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(160, 47);
-            this.buttonSend.TabIndex = 1;
-            this.buttonSend.Text = "Отправить";
-            this.buttonSend.UseVisualStyleBackColor = true;
+            this.buttonSave.Location = new System.Drawing.Point(242, 7);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(157, 37);
+            this.buttonSave.TabIndex = 1;
+            this.buttonSave.Text = "Сохранить";
+            this.buttonSave.UseVisualStyleBackColor = true;
             // 
             // FormReportRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 582);
-            this.Controls.Add(this.buttonSend);
-            this.Controls.Add(this.buttonFormirovat);
+            this.ClientSize = new System.Drawing.Size(437, 54);
+            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.dateTimePicker);
             this.Name = "FormReportRequest";
-            this.Text = "FormReportRequest";
+            this.Text = "Полный отчет";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonFormirovat;
-        private System.Windows.Forms.Button buttonSend;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Button buttonSave;
     }
 }

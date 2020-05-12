@@ -89,7 +89,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormAddMaterialToRequest";
-            this.Text = "FormAddMaterialToRequest";
+            this.Text = "Добавление материалов";
             this.ResumeLayout(false);
             this.PerformLayout();
 

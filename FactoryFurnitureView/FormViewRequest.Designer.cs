@@ -49,7 +49,7 @@
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(134, 46);
             this.buttonAdd.TabIndex = 1;
-            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.Text = "Создать заявку";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
@@ -61,7 +61,7 @@
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.dataGridView);
             this.Name = "FormViewRequest";
-            this.Text = "FormViewRequest";
+            this.Text = "Заявки";
             this.Load += new System.EventHandler(this.FormViewRequest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
