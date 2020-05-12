@@ -145,6 +145,50 @@ namespace FactoryFurnitureDataBase.Migrations
                     b.ToTable("Orders");
                 });
 
+            modelBuilder.Entity("FactoryFurnitureDataBase.Models.Request", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DataCreate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RequestName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Requests");
+                });
+
+            modelBuilder.Entity("FactoryFurnitureDataBase.Models.RequestMaterial", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaterialId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RequestId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MaterialId");
+
+                    b.HasIndex("RequestId");
+
+                    b.ToTable("RequestMaterials");
+                });
+
             modelBuilder.Entity("FactoryFurnitureDataBase.Models.FurnitureMaterial", b =>
                 {
                     b.HasOne("FactoryFurnitureDataBase.Models.Furniture", "Furniture")
@@ -171,6 +215,21 @@ namespace FactoryFurnitureDataBase.Migrations
                     b.HasOne("FactoryFurnitureDataBase.Models.Furniture", "Furnitures")
                         .WithMany("Order")
                         .HasForeignKey("FurnitureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("FactoryFurnitureDataBase.Models.RequestMaterial", b =>
+                {
+                    b.HasOne("FactoryFurnitureDataBase.Models.Material", "Material")
+                        .WithMany("RequestMaterial")
+                        .HasForeignKey("MaterialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FactoryFurnitureDataBase.Models.Request", "Request")
+                        .WithMany("RequestMaterial")
+                        .HasForeignKey("RequestId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

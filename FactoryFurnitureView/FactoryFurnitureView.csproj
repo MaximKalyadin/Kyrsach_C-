@@ -180,17 +180,11 @@
     <Compile Include="FormAddMaterialToFurniture.Designer.cs">
       <DependentUpon>FormAddMaterialToFurniture.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddMaterialToReport.cs">
+    <Compile Include="FormAddMaterialToRequest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddMaterialToReport.Designer.cs">
-      <DependentUpon>FormAddMaterialToReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormChooseFormat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormChooseFormat.Designer.cs">
-      <DependentUpon>FormChooseFormat.cs</DependentUpon>
+    <Compile Include="FormAddMaterialToRequest.Designer.cs">
+      <DependentUpon>FormAddMaterialToRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCreateFurniture.cs">
       <SubType>Form</SubType>
@@ -209,6 +203,12 @@
     </Compile>
     <Compile Include="FormCreateOrder.Designer.cs">
       <DependentUpon>FormCreateOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCreateRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateRequest.Designer.cs">
+      <DependentUpon>FormCreateRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -246,6 +246,12 @@
     <Compile Include="FormViewMaterial.Designer.cs">
       <DependentUpon>FormViewMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormViewRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewRequest.Designer.cs">
+      <DependentUpon>FormViewRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormСreateClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,11 +263,8 @@
     <EmbeddedResource Include="FormAddMaterialToFurniture.resx">
       <DependentUpon>FormAddMaterialToFurniture.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddMaterialToReport.resx">
-      <DependentUpon>FormAddMaterialToReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormChooseFormat.resx">
-      <DependentUpon>FormChooseFormat.cs</DependentUpon>
+    <EmbeddedResource Include="FormAddMaterialToRequest.resx">
+      <DependentUpon>FormAddMaterialToRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCreateFurniture.resx">
       <DependentUpon>FormCreateFurniture.cs</DependentUpon>
@@ -271,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCreateOrder.resx">
       <DependentUpon>FormCreateOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreateRequest.resx">
+      <DependentUpon>FormCreateRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -289,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormViewMaterial.resx">
       <DependentUpon>FormViewMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewRequest.resx">
+      <DependentUpon>FormViewRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormСreateClient.resx">
       <DependentUpon>FormСreateClient.cs</DependentUpon>

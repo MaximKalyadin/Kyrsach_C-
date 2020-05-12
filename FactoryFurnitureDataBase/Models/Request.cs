@@ -6,16 +6,14 @@ using System.Text;
 
 namespace FactoryFurnitureDataBase.Models
 {
-    public class Material
+    public class Request
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
         [Required]
-        public string MaterialName { get; set; }
+        public DateTime DataCreate { get; set; }
         [Required]
-        public int Count { get; set; }
-        [ForeignKey("MaterialId")]
-        public virtual List<FurnitureMaterial> FurnitureMaterial { get; set; }
-        [ForeignKey("MaterialId")]
+        public string RequestName { get; set; }
+        [ForeignKey("RequestId")]
         public virtual List<RequestMaterial> RequestMaterial { get; set; }
     }
 }

@@ -13,7 +13,7 @@ using Unity;
 
 namespace FactoryFurnitureView
 {
-    public partial class FormAddMaterialToReport : Form
+    public partial class FormAddMaterialToRequest : Form
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
@@ -31,7 +31,7 @@ namespace FactoryFurnitureView
                 textBoxCount.Text = value.ToString();
             }
         }
-        public FormAddMaterialToReport(IMaterialLogic logic)
+        public FormAddMaterialToRequest(IMaterialLogic logic)
         {
             InitializeComponent();
             List<MaterialViewModel> list = logic.Read(null);

@@ -37,6 +37,8 @@
             this.создатьМатериалыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonFinish = new System.Windows.Forms.Button();
+            this.заявкиНаПополнениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчетПоМатериаламToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -106,9 +108,12 @@
             // 
             // отчетыToolStripMenuItem
             // 
+            this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.заявкиНаПополнениеToolStripMenuItem,
+            this.отчетПоМатериаламToolStripMenuItem});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
-            this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
-            this.отчетыToolStripMenuItem.Text = "Отчет по заявкам";
+            this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.отчетыToolStripMenuItem.Text = "Отчеты";
             // 
             // buttonFinish
             // 
@@ -119,6 +124,20 @@
             this.buttonFinish.Text = "Завершить заказ";
             this.buttonFinish.UseVisualStyleBackColor = true;
             this.buttonFinish.Click += new System.EventHandler(this.buttonFinish_Click);
+            // 
+            // заявкиНаПополнениеToolStripMenuItem
+            // 
+            this.заявкиНаПополнениеToolStripMenuItem.Name = "заявкиНаПополнениеToolStripMenuItem";
+            this.заявкиНаПополнениеToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
+            this.заявкиНаПополнениеToolStripMenuItem.Text = "Заявки на пополнение";
+            this.заявкиНаПополнениеToolStripMenuItem.Click += new System.EventHandler(this.заявкиНаПополнениеToolStripMenuItem_Click);
+            // 
+            // отчетПоМатериаламToolStripMenuItem
+            // 
+            this.отчетПоМатериаламToolStripMenuItem.Name = "отчетПоМатериаламToolStripMenuItem";
+            this.отчетПоМатериаламToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
+            this.отчетПоМатериаламToolStripMenuItem.Text = "Отчет по материалам";
+            this.отчетПоМатериаламToolStripMenuItem.Click += new System.EventHandler(this.отчетПоМатериаламToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -152,5 +171,7 @@
         private System.Windows.Forms.ToolStripMenuItem создатьМатериалыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
         private System.Windows.Forms.Button buttonFinish;
+        private System.Windows.Forms.ToolStripMenuItem заявкиНаПополнениеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem отчетПоМатериаламToolStripMenuItem;
     }
 }

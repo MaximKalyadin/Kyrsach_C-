@@ -51,6 +51,20 @@ namespace FactoryFurnitureDataBase.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Requests",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DataCreate = table.Column<DateTime>(nullable: false),
+                    RequestName = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Requests", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Orders",
                 columns: table => new
                 {
@@ -109,6 +123,33 @@ namespace FactoryFurnitureDataBase.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "RequestMaterials",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RequestId = table.Column<int>(nullable: false),
+                    MaterialId = table.Column<int>(nullable: false),
+                    Count = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RequestMaterials", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_RequestMaterials_Materials_MaterialId",
+                        column: x => x.MaterialId,
+                        principalTable: "Materials",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_RequestMaterials_Requests_RequestId",
+                        column: x => x.RequestId,
+                        principalTable: "Requests",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_FurnitureMaterials_FurnitureId",
                 table: "FurnitureMaterials",
@@ -128,6 +169,16 @@ namespace FactoryFurnitureDataBase.Migrations
                 name: "IX_Orders_FurnitureId",
                 table: "Orders",
                 column: "FurnitureId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RequestMaterials_MaterialId",
+                table: "RequestMaterials",
+                column: "MaterialId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RequestMaterials_RequestId",
+                table: "RequestMaterials",
+                column: "RequestId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -139,13 +190,19 @@ namespace FactoryFurnitureDataBase.Migrations
                 name: "Orders");
 
             migrationBuilder.DropTable(
-                name: "Materials");
+                name: "RequestMaterials");
 
             migrationBuilder.DropTable(
                 name: "Clients");
 
             migrationBuilder.DropTable(
                 name: "Furnitures");
+
+            migrationBuilder.DropTable(
+                name: "Materials");
+
+            migrationBuilder.DropTable(
+                name: "Requests");
         }
     }
 }

@@ -31,8 +31,9 @@ namespace FactoryFurnitureView
            HierarchicalLifetimeManager());
             currentContainer.RegisterType<IOrderLogic, OrderLogic>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IFurnitureLogic, FurnitureLogic>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<IRequestLogic, RequestLogic>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<MainLogic>(new HierarchicalLifetimeManager());
-            //currentContainer.RegisterType<ReportLogic>(new HierarchicalLifetimeManager());
+            currentContainer.RegisterType<ReportLogic>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<IClientLogic, ClientLogic>(new HierarchicalLifetimeManager());
             return currentContainer;
         }
