@@ -45,14 +45,12 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
             });
         }
 
-        public List<RequestPdfViewModel> GetRequests(DateTime? dateTime)
+        public List<RequestPdfViewModel> GetRequests()
         {
             var requests = requestLogic.Read(null);
             List<RequestPdfViewModel> requestPdfViewModels = new List<RequestPdfViewModel>();
             foreach (var request in requests)
             {
-                if (request.DataCreate == dateTime)
-                {
                     foreach (var material in request.RequestMaterials)
                     {
                         requestPdfViewModels.Add(new RequestPdfViewModel()
@@ -62,20 +60,17 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
                             Count = material.Value.Item2
                         });
                     }
-                }
             }
             return requestPdfViewModels;
         }
 
-        public List<FurniturePdfViewModel> GetFurnitures(DateTime? date)
+        public List<FurniturePdfViewModel> GetFurnitures()
         {
             var orders = orderLogic.Read(null);
             var furnitures = furnitureLogic.Read(null);
             List<FurniturePdfViewModel> furnitureModel = new List<FurniturePdfViewModel>();
             foreach (var order in orders)
             {
-                if (date == order.DataImplement)
-                {
                     foreach (var furniture in furnitures)
                     {
                         if (order.FurnitureName == furniture.FurnitureName)
@@ -91,7 +86,6 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
                             }
                         }
                     }
-                }
             }
             return furnitureModel;
         }
@@ -102,8 +96,8 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
             {
                 FileName = model.FileName,
                 Title = "Отчет",
-                Request = GetRequests(model.DateTo),
-                Furniture =  GetFurnitures(model.DateTo)
+                Request = GetRequests(),
+                Furniture =  GetFurnitures()
             });
         }
     }

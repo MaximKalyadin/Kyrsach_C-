@@ -5,6 +5,8 @@ using MigraDoc.DocumentObjectModel;
 using MigraDoc.DocumentObjectModel.Tables;
 using MigraDoc.Rendering;
 using FactoryFurnitureBusinessLogic.HelperModel;
+using FactoryFurnitureBusinessLogic.ViewModel;
+using System.ComponentModel;
 
 namespace FactoryFurnitureBusinessLogic.BusinessLogic
 {
@@ -21,7 +23,8 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
             paragraph.Style = "Normal";
             var table = document.LastSection.AddTable();
             table.Format.Alignment = ParagraphAlignment.Center;
-            List<string> columns = new List<string> { "8cm", "6cm", "3cm" };
+            List<string> columns = new List<string> { "4cm", "4cm", "4cm"};
+            int Count = 0;
             foreach (var elem in columns)
             {
                 table.AddColumn(elem);
@@ -29,7 +32,14 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
             CreateRow(new PdfRowParameters
             {
                 Table = table,
-                Texts = new List<string> { "Дата", "Мебель", "Материалы","Количество", "Заявки", "Материалы", "Количество" },
+                Texts = new List<string> { "", "Заявки поматериалам",  "" },
+                Style = "NormalTitle",
+                ParagraphAlignment = ParagraphAlignment.Center
+            });
+            CreateRow(new PdfRowParameters
+            {
+                Table = table,
+                Texts = new List<string> { "Заявки", "Материалы", "Количество" },
                 Style = "NormalTitle",
                 ParagraphAlignment = ParagraphAlignment.Center
             });
@@ -38,22 +48,52 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
                 CreateRow(new PdfRowParameters
                 {
                     Table = table,
-                    Texts = new List<string> {"", "","","", ms.RequestName, ms.MaterialName, ms.Count.ToString() },
+                    Texts = new List<string> { ms.RequestName, ms.MaterialName, ms.Count.ToString() },
                     Style = "Normal",
                     ParagraphAlignment = ParagraphAlignment.Left
                 });
+                Count += ms.Count;
             }
-            /*
-            foreach (var ms in info.IngredientSklads)
+            CreateRow(new PdfRowParameters
+            {
+                Table = table,
+                Texts = new List<string> { "Общее количество", "", Count.ToString() },
+                Style = "NormalTitle",
+                ParagraphAlignment = ParagraphAlignment.Center
+            });
+            Count = 0;
+            CreateRow(new PdfRowParameters
+            {
+                Table = table,
+                Texts = new List<string> { "", "Мебель по материалам", "" },
+                Style = "NormalTitle",
+                ParagraphAlignment = ParagraphAlignment.Center
+            });
+            CreateRow(new PdfRowParameters
+            {
+                Table = table,
+                Texts = new List<string> { "Мебель", "Материалы", "Количество" },
+                Style = "NormalTitle",
+                ParagraphAlignment = ParagraphAlignment.Center
+            }); 
+            foreach (var ms in info.Furniture)
             {
                 CreateRow(new PdfRowParameters
                 {
                     Table = table,
-                    Texts = new List<string> { ms.IngredientName, ms.SkladName, ms.Count.ToString() },
+                    Texts = new List<string> {ms.FurnitureName, ms.MaterialName, ms.Count.ToString() },
                     Style = "Normal",
                     ParagraphAlignment = ParagraphAlignment.Left
                 });
-            }*/
+                Count += ms.Count;
+            }
+            CreateRow(new PdfRowParameters
+            {
+                Table = table,
+                Texts = new List<string> { "Общее количество", "", Count.ToString() },
+                Style = "NormalTitle",
+                ParagraphAlignment = ParagraphAlignment.Center
+            });
             PdfDocumentRenderer renderer = new PdfDocumentRenderer(true, PdfSharp.Pdf.PdfFontEmbedding.Always)
             {
                 Document = document
@@ -66,7 +106,7 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
         {
             Style style = document.Styles["Normal"];
             style.Font.Name = "Times New Roman";
-            style.Font.Size = 14;
+            style.Font.Size = 10;
             style = document.Styles.AddStyle("NormalTitle", "Normal");
             style.Font.Bold = true;
         }
@@ -81,7 +121,7 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
                     Cell = row.Cells[i],
                     Text = rowParameters.Texts[i],
                     Style = rowParameters.Style,
-                    BorderWidth = 0.5,
+                    BorderWidth = 0.1,
                     ParagraphAlignment = rowParameters.ParagraphAlignment
                 });
             }
@@ -90,7 +130,7 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
         /// Заполнение ячейки
         /// </summary>
         /// <param name="cellParameters"></param>
-        private static void FillCell(PdfCellParameters cellParameters)
+       private static void FillCell(PdfCellParameters cellParameters)
         {
             cellParameters.Cell.AddParagraph(cellParameters.Text);
             if (!string.IsNullOrEmpty(cellParameters.Style))

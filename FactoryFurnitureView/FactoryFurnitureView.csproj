@@ -210,6 +210,12 @@
     <Compile Include="FormCreateRequest.Designer.cs">
       <DependentUpon>FormCreateRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFulllReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFulllReport.Designer.cs">
+      <DependentUpon>FormFulllReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,12 +227,6 @@
     </Compile>
     <Compile Include="FormNotMaterial.Designer.cs">
       <DependentUpon>FormNotMaterial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormReportRequest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReportRequest.Designer.cs">
-      <DependentUpon>FormReportRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="FormViewClient.cs">
       <SubType>Form</SubType>
@@ -278,14 +278,14 @@
     <EmbeddedResource Include="FormCreateRequest.resx">
       <DependentUpon>FormCreateRequest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormFulllReport.resx">
+      <DependentUpon>FormFulllReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNotMaterial.resx">
       <DependentUpon>FormNotMaterial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormReportRequest.resx">
-      <DependentUpon>FormReportRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormViewClient.resx">
       <DependentUpon>FormViewClient.cs</DependentUpon>
