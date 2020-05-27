@@ -189,6 +189,21 @@ namespace FactoryFurnitureDataBase.Migrations
                     b.ToTable("RequestMaterials");
                 });
 
+            modelBuilder.Entity("FactoryFurnitureDataBase.Models.Staff", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Identification_Number")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Staffs");
+                });
+
             modelBuilder.Entity("FactoryFurnitureDataBase.Models.FurnitureMaterial", b =>
                 {
                     b.HasOne("FactoryFurnitureDataBase.Models.Furniture", "Furniture")

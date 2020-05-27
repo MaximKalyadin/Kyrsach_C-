@@ -23,5 +23,6 @@ namespace FactoryFurnitureDataBase
         public virtual DbSet<FurnitureMaterial> FurnitureMaterials { get; set; }
         public virtual DbSet<Request> Requests { get; set; }
         public virtual DbSet<RequestMaterial> RequestMaterials { get; set; }
+        public virtual DbSet<Staff> Staffs { get; set; }
     }
 }
