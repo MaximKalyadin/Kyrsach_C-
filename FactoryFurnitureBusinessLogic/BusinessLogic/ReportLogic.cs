@@ -81,7 +81,7 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
                                 {
                                     FurnitureName = furniture.FurnitureName,
                                     MaterialName = material.Value.Item1,
-                                    Count = material.Value.Item2
+                                    Count = material.Value.Item2 * order.Count
                                 });
                             }
                         }

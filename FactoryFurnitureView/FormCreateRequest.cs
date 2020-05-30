@@ -25,9 +25,10 @@ namespace FactoryFurnitureView
         private readonly IRequestLogic logic;
         private readonly ReportLogic reportLogic;
         private readonly IMaterialLogic materialLogic;
+        private readonly MailLogic mailLogic;
         private int? id;
-        private Dictionary<int, (string, int)> material; //= new Dictionary<int, (string, int)>();
-        public FormCreateRequest(IRequestLogic logic, ReportLogic reportLogic, IMaterialLogic materialLogic)
+        private Dictionary<int, (string, int)> material;
+        public FormCreateRequest(IRequestLogic logic, ReportLogic reportLogic, IMaterialLogic materialLogic, MailLogic mailLogic)
         {
             InitializeComponent();
             dataGridView.Columns.Add("Id", "Id");
@@ -38,6 +39,7 @@ namespace FactoryFurnitureView
             this.logic = logic;
             this.reportLogic = reportLogic;
             this.materialLogic = materialLogic;
+            this.mailLogic = mailLogic;
         }
 
         private void LoadData()
@@ -87,10 +89,10 @@ namespace FactoryFurnitureView
                     {
                         FileName = dialog.FileName
                     }, material);
-                    SendMassege(new ReportBindingModel
+                    mailLogic.SendMassege(new ReportBindingModel
                     {
                         FileName = dialog.FileName
-                    });
+                    }, textBoxEmail.Text, textBoxName.Text, "Заявка на заказ материалов");
                     MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK,
                    MessageBoxIcon.Information);
                 }
@@ -109,10 +111,10 @@ namespace FactoryFurnitureView
                         {
                             FileName = dialog.FileName
                         }, material);
-                        SendMassege(new ReportBindingModel
+                        mailLogic.SendMassege(new ReportBindingModel
                         {
                             FileName = dialog.FileName
-                        });
+                        }, textBoxEmail.Text, textBoxName.Text, "Заявка на заказ материалов");
                         MessageBox.Show("Выполнено", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
@@ -188,21 +190,6 @@ namespace FactoryFurnitureView
             {
                 material = new Dictionary<int, (string, int)>();
             }
-        }
-
-        public void SendMassege(ReportBindingModel model)
-        {
-            MailAddress from = new MailAddress("kalyadin.maxim@gmail.com");
-            MailAddress to = new MailAddress(textBoxEmail.Text);
-            MailMessage mes = new MailMessage(from, to);
-            mes.Subject = textBoxName.Text;
-            mes.Body = "Заявка на заказ материалов";
-            mes.Attachments.Add(new Attachment(model.FileName));
-            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-            client.Credentials = new NetworkCredential("kalyadin.maxim@gmail.com", "42MAKS01253");
-            client.EnableSsl = true;
-            client.Send(mes);
-
         }
     }
 }
