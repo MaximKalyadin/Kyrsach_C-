@@ -39,6 +39,7 @@ namespace FactoryFurnitureView
                         reportLogic.SaveToPdfFile(new ReportBindingModel
                         {
                             FileName = dialog.FileName,
+                            Date = dateTimePicker.Value.Date
                         });
                         mailLogic.SendMassege(new ReportBindingModel
                         {

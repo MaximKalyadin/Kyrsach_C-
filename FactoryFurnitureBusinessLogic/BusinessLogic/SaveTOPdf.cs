@@ -21,6 +21,10 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
             paragraph.Format.SpaceAfter = "1cm";
             paragraph.Format.Alignment = ParagraphAlignment.Center;
             paragraph.Style = "Normal";
+            Paragraph date = section.AddParagraph("Дата : " + info.Date.ToShortDateString());
+            date.Format.SpaceAfter = "1cm";
+            date.Format.Alignment = ParagraphAlignment.Left;
+            date.Style = "Normal";
             var table = document.LastSection.AddTable();
             table.Format.Alignment = ParagraphAlignment.Center;
             List<string> columns = new List<string> { "4cm", "4cm", "4cm"};

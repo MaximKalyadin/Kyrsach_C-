@@ -33,6 +33,8 @@
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxTeg = new System.Windows.Forms.TextBox();
             this.buttonSendToPdf = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -77,11 +79,29 @@
             this.buttonSendToPdf.UseVisualStyleBackColor = true;
             this.buttonSendToPdf.Click += new System.EventHandler(this.buttonSendToPdf_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Дата";
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(156, 70);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker.TabIndex = 6;
+            // 
             // FormFulllReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 116);
+            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonSendToPdf);
             this.Controls.Add(this.textBoxTeg);
             this.Controls.Add(this.textBoxEmail);
@@ -101,5 +121,7 @@
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxTeg;
         private System.Windows.Forms.Button buttonSendToPdf;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
     }
 }

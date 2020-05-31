@@ -45,12 +45,15 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
             });
         }
 
-        public List<RequestPdfViewModel> GetRequests()
+        public List<RequestPdfViewModel> GetRequests(DateTime dateTime)
         {
             var requests = requestLogic.Read(null);
             List<RequestPdfViewModel> requestPdfViewModels = new List<RequestPdfViewModel>();
             foreach (var request in requests)
             {
+                DateTime date = request.DataCreate;
+                if (date.ToShortDateString().Equals(dateTime.ToShortDateString()))
+                {
                     foreach (var material in request.RequestMaterials)
                     {
                         requestPdfViewModels.Add(new RequestPdfViewModel()
@@ -60,17 +63,21 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
                             Count = material.Value.Item2
                         });
                     }
+                }
             }
             return requestPdfViewModels;
         }
 
-        public List<FurniturePdfViewModel> GetFurnitures()
+        public List<FurniturePdfViewModel> GetFurnitures(DateTime dateTime)
         {
             var orders = orderLogic.Read(null);
             var furnitures = furnitureLogic.Read(null);
             List<FurniturePdfViewModel> furnitureModel = new List<FurniturePdfViewModel>();
             foreach (var order in orders)
             {
+                DateTime date = order.DataCreate;
+                if (date.ToShortDateString().Equals(dateTime.ToShortDateString()))
+                {
                     foreach (var furniture in furnitures)
                     {
                         if (order.FurnitureName == furniture.FurnitureName)
@@ -86,6 +93,7 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
                             }
                         }
                     }
+                }
             }
             return furnitureModel;
         }
@@ -95,9 +103,10 @@ namespace FactoryFurnitureBusinessLogic.BusinessLogic
             SaveToPdf.CreateDoc(new PdfInfo
             {
                 FileName = model.FileName,
+                Date = model.Date,
                 Title = "Отчет",
-                Request = GetRequests(),
-                Furniture =  GetFurnitures()
+                Request = GetRequests(model.Date),
+                Furniture =  GetFurnitures(model.Date)
             });
         }
     }
